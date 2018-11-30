@@ -8,3 +8,4 @@
 * """pipenv shell""" ensures that you are "logged in" to the local 
 Python environment and not the global.
 * On linux Ctrl + D logs you out of that environment.
+* on Windows Ctrl + Z plus Enter logs you out of that environment

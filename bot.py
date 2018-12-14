@@ -5,11 +5,17 @@ import os
 
 dotenv.load_dotenv()
 
-TOKEN = os.getenv("DISCORD_TOKEN")
+TOKEN = os.getenv("DISCORD_AUTH_TOKEN")
 BOT_PREFIXES = ("!")
 MyBot = Bot(command_prefix = BOT_PREFIXES)
 
-#Simple Hello world text
+# Startup message
+@MyBot.event
+async def on_ready():
+    print("\nBot active...\n")
+
+
+# Simple Hello world text
 @MyBot.command(aliases = ["helloworld", "hiworld", "heyworld", "hey", "hi"], pass_context = True)
 async def hello_world(context):
 
@@ -18,12 +24,10 @@ async def hello_world(context):
     channel = context.channel
     await channel.send("Hello world!")
 
-#Deleting messages
-@MyBot.command(aliases = ["del", "delete", "clear"], pass_context = True)
-async def delete_message(context):
+#
+@MyBot.event
+async def message():
 
-    channel = context.channel
-    await channel.delete_messages()
-
+    print(message(content))
 
 MyBot.run(TOKEN)

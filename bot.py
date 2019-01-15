@@ -55,8 +55,17 @@ async def download_image(context, URL, output_file_char):
     channel = context.channel
     await channel.send("Image downloaded and saved...")
 
-#@MyBot.command(aliases=["upload", "ul", "u", "uload", "l"], pass_context = True)
-#async def upload_image(context):
+@MyBot.command(aliases=["upload", "ul", "u", "uload", "l"], pass_context = True)
+async def upload_image(context, requested_filename):
+
+    channel = context.channel
+        
+    try:
+        await MyBot.send_file(channel, "images\\" + requested_filename + ".png")
+        
+    except:
+        print("\nDebug: Requsted file does not exist!")
+        await channel.send("Requsted file does not exist!")
 
 
 

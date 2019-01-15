@@ -9,3 +9,7 @@
 Python environment and not the global.
 * On linux Ctrl + D logs you out of that environment.
 * on Windows Ctrl + Z plus Enter logs you out of that environment
+
+
+## Remainder
+* I installed discord rewrite: py -3 -m pip install -U discord.py

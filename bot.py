@@ -49,8 +49,8 @@ async def download_image(context, URL, output_file_char):
 
     del img_info
 
-    print("Action: Image has been downloaded and saved")
-    print("\nDebug: Saved image filename: {}".format(output_file_name))
+    print("\nAction: Image has been downloaded and saved")
+    print("Debug: Saved image filename: {}".format(output_file_name))
 
     channel = context.channel
     await channel.send("Image downloaded and saved...")
